@@ -1,4 +1,4 @@
-#　Each Aging
+# Each Aging
 ​
 ## サイト概要
 ### サイトテーマ
