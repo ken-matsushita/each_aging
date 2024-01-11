@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>EachAging</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -54,8 +54,13 @@
     <main>
     <%= yield %>
     </main>
-    <footer>
-      <nav class="fixed-bottom navbar navbar-expand-lg navbar-dark bg-dark"></nav>
+    <footer class="bg-dark text-white pt-3 pb-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-8"><p>愛用品のそれぞれの経年変化を讃え合うSNS</p></div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
