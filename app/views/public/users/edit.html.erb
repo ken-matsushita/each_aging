@@ -1,2 +1,38 @@
-<h1>Public::Users#edit</h1>
-<p>Find me in app/views/public/users/edit.html.erb</p>
+<div class="container">
+    <label class="h4 bg-light mx-5 my-4 px-4">ユーザー情報編集</label>
+    <div class="row　mb-2">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-11">
+          <%= form_with model: @user do |f| %>
+          
+            <div class="field">
+              <%= f.label :"氏名" %><br />
+              <%= f.text_field :name %> 
+            </div>
+            <div class="field">
+              <%= f.label :"アカウント名" %><br />
+              <%= f.text_field :account_name %> 
+            </div>
+            
+            <div class="field">
+              <%= f.label :"プロフィール画像" %><br />
+              <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>
+            </div>
+            
+            <div class="field">
+              <%= f.label :"紹介文" %><br />
+              <%= f.text_area :introduction, class: "form-control", size: "5x5" %>
+            </div>
+            
+            <div class="field">
+              <%= f.label :"Eメール" %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", size: "20x10" %>
+            </div>
+
+            <div class="actions mt-3">
+              <%= f.submit "変更を保存", class: "btn btn-primary px-5" %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+</div>
