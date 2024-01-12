@@ -1,2 +1,17 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<div class="container">
+  <div class="row">
+      
+      <div class="col-lg-8 mx-auto mt-5 mb-3">
+        <label class="h1 bg-light mx-5 my-4 px-4">ようこそEach Agingへ</label>
+        <p>Each Agingでは、革製品やデニムなど経年変化を楽しめる愛用品を投稿できます。</p>
+        <p>また、ケア方法や使用年数など参考になる情報も盛り沢山です。</p>
+        <p>是非、皆さんの経年変化を見せて下さい！</p>
+      </div>
+
+      <div class="btn-wrapper col-8 mx-auto">
+        <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn-sm btn-block " %>
+        <%= link_to '新規登録', new_user_registration_path, class: "btn btn-success btn-sm btn-block " %>
+    </div>
+    
+  </div>
+</div>
