@@ -11,7 +11,9 @@
               <tr><td>いいねフォローフォロワー</td></tr>
             </tbody>
           </table>
-          <%= link_to "編集する", edit_user_path(@user.id), class: "btn btn-outline-secondary btn-block"%>
+          <% if @user == current_user %>
+            <%= link_to "編集する", edit_user_path(@user.id), class: "btn btn-outline-secondary btn-block"%>
+          <% end %>
         </div>
     
     <div class="col-lg-8 offset-md-1">投稿一覧</div>
