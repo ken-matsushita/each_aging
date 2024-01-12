@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   
+  validates :name, presence: true
+  validates :account_name, presence: true
+  validates :email, presence: true
+  
   has_one_attached :profile_image
   
   def get_profile_image(width, height)

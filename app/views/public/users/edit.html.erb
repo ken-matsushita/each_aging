@@ -3,6 +3,9 @@
     <div class="row　mb-2">
         <div class="col-lg-1"></div>
         <div class="col-lg-11">
+          
+          <%= render 'layouts/errors', obj: @user %>
+          
           <%= form_with model: @user do |f| %>
           
             <div class="field">
