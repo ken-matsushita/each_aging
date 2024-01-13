@@ -18,9 +18,23 @@ class Public::PostImagesController < ApplicationController
   end
 
   def show
+    @post_image = PostImage.find(params[:id])
   end
 
   def index
+    @post_images = PostImage.page(params[:page])
+  end
+  
+  def destroy
+    post_image = PostImage.find(params[:id])
+    if post_image.destroy
+      flash[:notice] = "削除に成功しました。"
+      redirect_to user_path(current_user)
+    else
+      flash[:alert] = "削除に失敗しました。"
+      @post_image = PostImage.find(params[:id])
+      render :show
+    end
   end
   
   private

@@ -1,2 +1,52 @@
-<h1>Public::PostImages#show</h1>
-<p>Find me in app/views/public/post_images/show.html.erb</p>
+<div class="container">
+  <label class="h4 bg-light mx-5 my-4 px-4">投稿詳細</label>
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-10">
+        
+        
+        
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <td>投稿画像</td>
+              <td><%= image_tag @post_image.get_image %></td>
+            </tr>
+            <tr>
+              <td>ユーザー</td>
+              <td>
+                <%= image_tag post_image.user.get_profile_image(100,100), class: "mt-3 rounded-circle"; %>
+                <%= link_to user_path(@post_image.user_id) do %>
+                  <%= @post_image.user.name %>
+                <% end %>
+              </td>
+            </tr>
+            <tr>
+              <td>商品名</td>
+              <td><%= @post_image.name %></td>
+            </tr>
+            <tr>
+              <td>ケア方法</td>
+              <td><%= @post_image.care %></td>
+            </tr>
+            <tr>
+              <td>使用年数</td>
+              <td><%= @post_image.years_passed %></td>
+            </tr>
+            <tr>
+              <td>本文</td>
+              <td><%= @post_image.body %></td>
+            </tr>
+            <tr>
+              <td>投稿日</td>
+              <td><%= @post_image.created_at.strftime('%Y/%m/%d') %></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <% if @post_image.user == current_user %>
+          <%= link_to "削除する", post_image_path(@post_image.id), method: :delete, "data-confirm" => "本当に削除しますか？", class:"btn btn-danger" %>
+        <% end %>
+      </div>
+  </div>
+</div>
