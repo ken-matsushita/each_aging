@@ -2,7 +2,7 @@
   <% @post_images.each do |post_image| %>
   <div class="card w-50 mx-auto mt-4 shadow-lg">
     <%= link_to post_image_path(post_image.id) do %>
-      <%= image_tag post_image.get_image, class: "card-img-top"; %>
+      <%= image_tag post_image.get_image(200,200), class: "card-img-top"; %>
     <% end %>
     <div class="card-body">
       <div class="row">
@@ -23,5 +23,5 @@
     </div>
   </div>
   <% end %>
-  <%= paginate post_images %>
+  <%= paginate @post_images %>
 </div>
