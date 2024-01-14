@@ -1,2 +1,71 @@
-<h1>Admin::Users#show</h1>
-<p>Find me in app/views/admin/users/show.html.erb</p>
+<div class="container">
+  <label class="h4 bg-light mt-2 mb-2 px-4"><%= @user.name %>さんの会員詳細</label>
+  <div class="row mb-2">
+    
+    <div class="col-lg-4">
+      <table class="table table-condensed">
+        <tbody>
+          <tr>
+            <th>会員ID</th>
+            <td><%= @user.id %></td>
+          </tr>
+          <tr>
+            <th>氏名</th>
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+            <th>ユーザー名</th>
+            <td><%= @user.account_name %></td>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <td><%= @user.email %></td>
+          </tr>
+          <tr>
+            <th>紹介文</th>
+            <td><%= @user.introduction %></td>
+          </tr>
+          <tr>
+            <th>会員ステータス</th>
+            <td>
+              <% if @user.is_active == true %>
+                <p class="text-success">有効</p>
+              <% else %>
+                <p class="text-muted">退会</p>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td><%= link_to "編集する", edit_admin_user_path(@user.id), class: "btn btn-sm btn-primary" %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="col-lg-7 offset-lg-1">
+      <div class="card-list-container py-5">
+        <% @user.post_images.each do |post_image| %>
+          <div class="card w-50 mx-auto mt-4 shadow-lg">
+              <%= image_tag post_image.get_image(200,200), class: "card-img-top"; %>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-2">
+                  <%= image_tag post_image.user.get_profile_image(100,100), class: "mt-3 rounded-circle"; %>
+                </div>
+                <div class="col-9 offset-1">
+                  <p class="card-title">
+                      <strong><span class="text-dark"><%= post_image.name %></span></strong>
+                  </p>
+                  <p class="card-text">投稿日：<%= post_image.created_at.strftime('%Y/%m/%d') %></p>
+                  <span class="text-dark"> By <%= post_image.account_name %></span>
+                  <span class="text-dark"><%= post_image.comments.count %>コメント</span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <%= paginate @post_images %>
+      </div>
+    </div>
+    
+  </div>
+</div>
