@@ -11,7 +11,7 @@
           <tr><td>いいねフォローフォロワー</td></tr>
         </tbody>
       </table>
-      <% if @user == current_user %>
+      <% if @user == current_user && @user.email != "guest@example.com" %>
         <%= link_to "編集する", edit_user_path(@user.id), class: "btn btn-outline-secondary btn-block"%>
       <% end %>
     </div>
