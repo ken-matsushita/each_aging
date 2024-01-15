@@ -1,0 +1,23 @@
+<table class="table table shadow-sm">
+  <thead class="bg-light">
+    <tr>
+      <th>ユーザー画像</th>
+      <th>ユーザー名</th>
+      <th>紹介文</th>
+      <th>投稿数</th>
+      <th>フォロワー数</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% users.each do |user| %>
+    <tr>
+      <td><%= image_tag user.get_profile_image(75,75), class: "mt-3 rounded-circle"; %></td>
+      <td><%= link_to user.account_name, user_path(user.id) %></td>
+      <td><%= user.introduction %></td>
+      <td><%= user.post_images.count %></td>
+      <td>途中</td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>

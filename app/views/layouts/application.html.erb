@@ -52,6 +52,14 @@
       </nav>
     </header>
     <main>
+      <div class="d-flex justify-content-center mb-2">
+        <% if user_signed_in? %>
+          <%= render "public/searches/searchform" %>
+        <% elsif admin_signed_in? %>
+          <%= render "admin/searches/admin_searchform" %>
+        <% else %>
+        <% end %>
+      </div>
       <% flash.each do |message_type, message| %>
         <div class="flash-message <%= message_type %>"><%= message %></div>
       <% end %>

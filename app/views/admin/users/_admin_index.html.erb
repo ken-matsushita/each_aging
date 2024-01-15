@@ -1,0 +1,29 @@
+<table class="table table shadow-sm">
+  <thead class="bg-light">
+    <tr>
+      <th>会員ID</th>
+      <th>アカウント名</th>
+      <th>氏名</th>
+      <th>メールアドレス</th>
+      <th>ステータス</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.account_name %></td>
+      <td><%= link_to user.name, admin_user_path(user.id) %></td>
+      <td><%= user.email %></td>
+      <td>
+        <% if user.is_active == true %>
+          <p class="text-success">有効</p>
+        <% else %>
+          <p class="text-muted">退会</p>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>

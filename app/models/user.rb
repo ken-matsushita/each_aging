@@ -44,4 +44,15 @@ class User < ApplicationRecord
     email == GUEST_USER_EMAIL
   end
   
+  def self.search_for(content, method)
+    if method == 'perfect'
+      User.where(account_name: content)
+    elsif method == 'forward'
+      User.where('account_name LIKE ?', content + '%')
+    elsif method == 'backward'
+      User.where('account_name LIKE ?', '%' + content)
+    else
+      User.where('account_name LIKE ?', '%' + content + '%')
+    end
+  end
 end

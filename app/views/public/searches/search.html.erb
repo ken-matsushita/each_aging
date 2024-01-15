@@ -1,2 +1,13 @@
-<h1>Public::Searches#search</h1>
-<p>Find me in app/views/public/searches/search.html.erb</p>
+<div class="container">
+<label class="h4 bg-light mt-2 px-4">"<%= @content %>"の検索結果</label>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-10">
+      <% if @model == 'user' %>
+        <%= render 'public/users/index', users: @records %>
+      <% elsif @model == 'post_image' %>
+        <%= render 'public/searches/postimage_index', post_images: @records %>
+      <% end %>
+    </div>
+  </div>
+</div>
