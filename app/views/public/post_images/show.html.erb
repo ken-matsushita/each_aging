@@ -1,8 +1,13 @@
 <div class="container">
-  <label class="h4 bg-lightmx-5 my-4 px-4">投稿詳細</label>
     <div class="row mb-2">
-      <div class="col-lg-2"></div>
-      <div class="col-lg-10">
+      <div class="col-lg-3">
+
+        <%= render "public/searches/genre_search", genres: @genres %>
+
+      </div>
+      
+      <div class="col-lg-8 offset-lg-1">
+        <label class="h4 bg-light mx-5 my-4 px-4">投稿詳細</label>
 
         <table class="table table-condensed">
           <tbody>

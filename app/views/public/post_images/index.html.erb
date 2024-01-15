@@ -1,1 +1,16 @@
-<%= render "index", post_images: @post_images %>
+<div class="container">
+  <div class="row mb-2">
+    <div class="col-lg-3">
+
+      <%= render "public/searches/genre_search", genres: @genres %>
+
+    </div>
+    
+    <div class="col-lg-8 offset-lg-1">
+      <label class="h4 bg-light mx-5 my-4 px-4">投稿一覧</label>
+
+        <%= render "index", post_images: @post_images %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <%= render "public/searches/genre_search", genres: @genres %>
+    </div>
+    
+    <div class="col-lg-8 offset-lg-1">
+      <label class="h4 bg-light mx-5 my-4 px-4">検索結果</label>
+
+      <div class="search-post_images d-flex flex-wrap">
+      <% @post_images.each do |post_image| %>
+        <div class="search-post_image mr-2">
+          <%= link_to post_image_path(post_image.id) do %>
+            <%= image_tag post_image.image, size: "200x200" %>
+          <% end %>
+          <p><%= post_image.name %></p>
+          <p>By <%= post_image.user.account_name %></p>
+          <p><%= post_image.created_at.strftime('%Y/%m/%d') %></p>
+        </div>
+      <% end %>
+      </div>
+      <%= paginate @post_images %>
+
+    </div>
+  </div>
+</div>

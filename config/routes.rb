@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     end
     
     get "search" => "searches#search"
+    get '/genre/search' => 'searches#genre_search'
     get "users/check" => "users#check"
     patch "users/withdraw" => "users#withdraw"
     

@@ -19,10 +19,12 @@ class Public::PostImagesController < ApplicationController
 
   def show
     @post_image = PostImage.find(params[:id])
+    @genres = Genre.all
   end
 
   def index
     @post_images = PostImage.page(params[:page])
+    @genres = Genre.all
   end
   
   def destroy
