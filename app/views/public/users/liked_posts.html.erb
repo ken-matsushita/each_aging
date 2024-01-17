@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="headline mt-5 ml-5">いいねした投稿</h4>
+        <div class="row mt-3">
+        <% @liked_posts.each do |post_image| %>
+          <div class="d-flex flex-wrap">
+            <div class="mr-2">
+              <%= link_to post_image_path(post_image.id) do %>
+                <%= image_tag post_image.image, size: "200x200" %>
+              <% end %>
+              <p><%= post_image.name %></p>
+              <p>By <%= post_image.user.account_name %></p>
+              <p><%= post_image.created_at.strftime('%Y/%m/%d') %></p>
+            </div>
+          </div>
+        <% end %>
+        </div>
+        
+      <div class="d-flex justify-content-center">
+        <%= paginate @liked_posts %>
+      </div>
+      
+    </div>
+  </div>
+</div>

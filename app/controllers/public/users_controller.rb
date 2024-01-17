@@ -35,6 +35,11 @@ class Public::UsersController < ApplicationController
     redirect_to root_path
   end
   
+  def liked_posts
+    @liked_posts = PostImage.liked_posts(current_user, params[:page], 9)
+  end
+  
+  
   private
 
   def user_params

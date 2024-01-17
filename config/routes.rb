@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: "homes#top"
     resources :post_images, only: [:new, :create, :show, :index, :destroy] do
-      resource :favorite, only: [:create, :destroy, :index]
+      resource :favorite, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
     end
     
@@ -28,6 +28,10 @@ Rails.application.routes.draw do
       resource :relationships, only: [:create, :destroy]
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
+      member do
+      # いいねした一覧
+        get :liked_posts
+      end
     end
   end
   
@@ -43,4 +47,5 @@ Rails.application.routes.draw do
     post "users/guest_sign_in", to: "public/sessions#guest_sign_in"
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
 end

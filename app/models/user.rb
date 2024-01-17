@@ -55,4 +55,5 @@ class User < ApplicationRecord
       User.where('account_name LIKE ?', '%' + content + '%')
     end
   end
+  
 end
