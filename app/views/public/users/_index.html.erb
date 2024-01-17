@@ -16,7 +16,7 @@
       <td><%= link_to user.account_name, user_path(user.id) %></td>
       <td><%= user.introduction %></td>
       <td><%= user.post_images.count %></td>
-      <td>途中</td>
+      <td><%= user.followers.count %></td>
     </tr>
     <% end %>
     </tbody>
