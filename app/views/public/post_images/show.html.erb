@@ -5,7 +5,7 @@
         <%= render "public/searches/genre_search", genres: @genres %>
 
       </div>
-      
+
       <div class="col-lg-8 offset-lg-1">
         <label class="h4 bg-light mx-5 my-4 px-4">投稿詳細</label>
 
@@ -55,10 +55,10 @@
             </tr>
           </tbody>
         </table>
-        
+
         <div>
           <p>コメント件数：<%= @post_image.comments.count %></p>
-          <% @post_image.comments.each do |post_comment| %>
+          <% @post_image.comments.each do |comment| %>
             <p><%= image_tag comment.user.get_profile_image(100,100), class: "mt-3 rounded-circle"; %></p>
             <%= comment.user.account_name %>
             <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.body %>
@@ -73,7 +73,7 @@
             <%= f.text_area :body, rows: '5', placeholder: "コメントをここに" %>
           </div>
           <div>
-            <%= f.submit "送信する" %>
+            <%= f.submit "送信する", class: "btn btn-primary" %>
           </div>
           <% end %>
         </div>
