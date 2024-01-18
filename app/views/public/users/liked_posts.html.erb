@@ -1,18 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-lg-12">
       <h4 class="headline mt-5 ml-5">いいねした投稿</h4>
-        <div class="row mt-3">
+      
+        <div class="d-flex flex-wrap mt-2">
         <% @liked_posts.each do |post_image| %>
-          <div class="d-flex flex-wrap">
-            <div class="mr-2">
+          <div class="card m-2 shadow-lg">
               <%= link_to post_image_path(post_image.id) do %>
-                <%= image_tag post_image.image, size: "200x200" %>
+                <%= image_tag post_image.get_image(200,200), class: "card-img-top"; %>
               <% end %>
-              <p><%= post_image.name %></p>
-              <p>By <%= post_image.user.account_name %></p>
-              <p><%= post_image.created_at.strftime('%Y/%m/%d') %></p>
-            </div>
+              <p class="text-dark ml-1"><%= post_image.name %></p>
+              <p class="text-dark ml-1">By <%= post_image.user.account_name %></p>
+              <p class="text-dark ml-1"><%= post_image.created_at.strftime('%Y/%m/%d') %></p>
           </div>
         <% end %>
         </div>
