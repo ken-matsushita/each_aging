@@ -19,8 +19,10 @@
 - 所持している製品のケア方法を参考にしたい時
 
 ## 設計書
+- ER図 https://app.diagrams.net/#G1fl2IMrEVolmjgxvNjjLjrBJLA_5hErM0
+- テーブル定義書 https://docs.google.com/spreadsheets/d/1pe3lmrCUS-Y3UtZ8DiSTIK4DYVB_x_TzOa9n3J8ss24/edit#gid=0
+- アプリケーション詳細設計書 https://docs.google.com/spreadsheets/d/1wPZWDIM1Nr0k_QkCr8EJjYbzp0mlbcGSMa5aURjqtA4/edit#gid=0
 
-​
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
