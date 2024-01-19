@@ -1,0 +1,8 @@
+<% post_image.comments.each do |comment| %>
+  <p><%= image_tag comment.user.get_profile_image(100,100), class: "mt-3 rounded-circle"; %></p>
+  <%= comment.user.account_name %>
+  <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.body %>
+  <% if comment.user == current_user %>
+    <%= link_to "削除", post_image_comment_path(comment.post_image, comment), method: :delete, remote:true, data: {"turbolinks" => false}, class: "btn btn-danger" %>
+  <% end %>
+<% end %>
