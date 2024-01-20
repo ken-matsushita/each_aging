@@ -1,3 +1,3 @@
-$('#comment_counter').html("<%= j(render 'comments/counter', post_image: @post_image) %>");
-$('#comment_index').html("<%= j(render 'comments/index', post_image: @post_image) %>");
-$('#comment_textarea').val("");
+$('#comment_counter').html("<%= j(render 'public/comments/counter', post_image: @post_image) %>");
+$('#comment_index').html("<%= j(render 'public/comments/index', post_image: @post_image) %>");
+$('#comment_body').val("");
