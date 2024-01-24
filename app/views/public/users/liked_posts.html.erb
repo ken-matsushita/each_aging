@@ -7,11 +7,11 @@
         <% @liked_posts.each do |post_image| %>
           <div class="card m-2 shadow-lg">
               <%= link_to post_image_path(post_image.id) do %>
-                <%= image_tag post_image.get_image(200,200), class: "card-img-top"; %>
+                <%= image_tag post_image.get_image(300,300), class: "card-img-top"; %>
               <% end %>
               <p class="text-dark ml-1"><%= post_image.name %></p>
               <p class="text-dark ml-1">By <%= post_image.user.account_name %></p>
-              <p class="text-dark ml-1"><%= post_image.created_at.strftime('%Y/%m/%d') %></p>
+              <p class="text-dark ml-1 mb-2"><%= post_image.created_at.strftime('%Y/%m/%d') %></p>
           </div>
         <% end %>
         </div>

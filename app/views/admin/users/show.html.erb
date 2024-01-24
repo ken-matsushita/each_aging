@@ -46,11 +46,11 @@
       <div class="d-flex flex-wrap">
         <% @user.post_images.each do |post_image| %>
           <div class="card m-2 shadow-lg">
-              <%= image_tag post_image.get_image(200,200), class: "card-img-top"; %>
+              <%= image_tag post_image.get_image(300,300), class: "card-img-top"; %>
               <p class="ml-1"><strong><span class="text-dark"><%= post_image.name %></span></strong></p>
               <p class="text-dark ml-1">投稿日：<%= post_image.created_at.strftime('%Y/%m/%d') %></p>
               <span class="text-dark ml-1"> By <%= post_image.user.account_name %></span></br>
-              <span class="text-dark">♥<%= post_image.favorites.count %> いいね | <%= post_image.comments.count %>コメント</span>
+              <span class="text-dark mb-2">♥<%= post_image.favorites.count %> いいね | <%= post_image.comments.count %>コメント</span>
           </div>
         <% end %>
         <%= paginate @post_images %>

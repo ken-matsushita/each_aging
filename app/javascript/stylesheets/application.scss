@@ -11,7 +11,7 @@ body {
 
   /* 一番下までスクロールした時の余白 */
   padding-bottom: 0;
-  background-color: #F0FFF0;
+  background-color: #F5FFFA;
 }
 
 footer {
@@ -22,4 +22,12 @@ footer {
 
   /* フッタの高さ */
   height: 60px;
+}
+ 
+.flash-message.notice {
+  color: #0067C0;
+}
+ 
+.flash-message.alert {
+  color: #930403;
 }

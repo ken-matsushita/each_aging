@@ -1,15 +1,15 @@
 <div class="d-flex flex-wrap">
   <% post_images.each do |post_image| %>
-  <div class="card m-2  shadow-lg">
+  <div class="card m-2 shadow-lg">
     <%= link_to post_image_path(post_image.id) do %>
-      <%= image_tag post_image.get_image(200,200), class: "card-img-top"; %>
+      <%= image_tag post_image.get_image(300,300), class: "card-img-top"; %>
     <% end %>
     <%= link_to(post_image_path(post_image.id), class: "text-dark") do %>
       <p><strong><span class="ml-1"><%= post_image.name %></span></strong></p>
     <% end %>
     <p class="text-dark ml-1">投稿日：<%= post_image.created_at.strftime('%Y/%m/%d') %></p>
     <span class="text-dark ml-1"> By <%= post_image.user.account_name %></span></br>
-    <span class="text-dark">
+    <span class="text-dark mb-2">
       ♥<%= post_image.favorites.count %> いいね | 
       <%= link_to "#{post_image.comments.count} コメント", post_image_path(post_image.id), class: "text-dark" %>
     </span>
